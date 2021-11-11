@@ -1,4 +1,4 @@
-import CID from 'cids'
+import { CID } from 'multiformats/cid'
 import cloneDeep from 'lodash.clonedeep'
 import type { Context } from './context'
 import { CommitID, StreamID } from '@ceramicnetwork/streamid'
@@ -282,9 +282,5 @@ export interface StreamHandler<T extends Stream> {
    * @param context - Ceramic context
    * @param state - Stream state
    */
-  applyCommit(
-    commitData: CommitData,
-    context: Context,
-    state?: StreamState
-  ): Promise<StreamState>
+  applyCommit(commitData: CommitData, context: Context, state?: StreamState): Promise<StreamState>
 }

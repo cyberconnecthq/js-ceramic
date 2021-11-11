@@ -1,4 +1,4 @@
-import type CID from 'cids'
+import type { CID } from 'multiformats/cid'
 import { IpfsApi } from './index'
 
 export interface PinningBackend {

@@ -1,4 +1,4 @@
-import CID from 'cids'
+import { CID } from 'multiformats/cid'
 import cloneDeep from 'lodash.clonedeep'
 import * as u8a from 'uint8arrays'
 
@@ -65,25 +65,25 @@ export class StreamUtils {
     const cloned = cloneDeep(commit)
 
     if (StreamUtils.isSignedCommitContainer(cloned)) {
-      cloned.jws.link = new CID(cloned.jws.link)
+      cloned.jws.link = CID.asCID(cloned.jws.link)
       cloned.linkedBlock = u8a.fromString(cloned.linkedBlock, 'base64')
       return cloned
     }
 
     if (StreamUtils.isSignedCommit(cloned)) {
-      cloned.link = new CID(cloned.link)
+      cloned.link = CID.asCID(cloned.link)
     }
 
     if (StreamUtils.isAnchorCommit(cloned)) {
-      cloned.proof = new CID(cloned.proof)
+      cloned.proof = CID.asCID(cloned.proof)
     }
 
     if (cloned.id) {
-      cloned.id = new CID(cloned.id)
+      cloned.id = CID.asCID(cloned.id)
     }
 
     if (cloned.prev) {
-      cloned.prev = new CID(cloned.prev)
+      cloned.prev = CID.asCID(cloned.prev)
     }
     return cloned
   }
@@ -127,10 +127,10 @@ export class StreamUtils {
       delete cloned.doctype
     }
 
-    cloned.log = cloned.log.map((entry: any): LogEntry => ({ ...entry, cid: new CID(entry.cid) }))
+    cloned.log = cloned.log.map((entry: any): LogEntry => ({ ...entry, cid: CID.asCID(entry.cid) }))
     if (cloned.anchorProof) {
-      cloned.anchorProof.txHash = new CID(cloned.anchorProof.txHash)
-      cloned.anchorProof.root = new CID(cloned.anchorProof.root)
+      cloned.anchorProof.txHash = CID.asCID(cloned.anchorProof.txHash)
+      cloned.anchorProof.root = CID.asCID(cloned.anchorProof.root)
     }
 
     let showScheduledFor = true
@@ -147,7 +147,7 @@ export class StreamUtils {
       }
     }
     if (cloned.lastAnchored) {
-      cloned.lastAnchored = new CID(cloned.lastAnchored)
+      cloned.lastAnchored = CID.asCID(cloned.lastAnchored)
     }
     return cloned
   }
@@ -192,7 +192,7 @@ export class StreamUtils {
       const block = await ipfs.block.get((commit as DagJWS).link)
       return {
         jws: commit as DagJWS,
-        linkedBlock: block.data,
+        linkedBlock: block,
       }
     }
     return commit
