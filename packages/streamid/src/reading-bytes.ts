@@ -1,4 +1,6 @@
-import CID from 'cids'
+import { CID } from 'multiformats/cid'
+import { decode as decodeMultiHash } from 'multiformats/hashes/digest'
+
 import varint from 'varint'
 
 export function readVarint(bytes: Uint8Array): [number, Uint8Array, number] {
@@ -22,5 +24,5 @@ export function readCid(bytes: Uint8Array): [CID, Uint8Array] {
   const [mhLength, , mhLengthLength] = readVarint(mhCodecRemainder)
   const multihashBytes = codecRemainder.slice(0, mhCodecLength + mhLengthLength + mhLength)
   const multihashBytesRemainder = codecRemainder.slice(mhCodecLength + mhLengthLength + mhLength)
-  return [new CID(cidVersion, codec, multihashBytes), multihashBytesRemainder]
+  return [CID.create(cidVersion, codec, decodeMultiHash(multihashBytes)), multihashBytesRemainder]
 }

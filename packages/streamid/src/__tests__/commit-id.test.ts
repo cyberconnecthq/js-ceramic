@@ -1,12 +1,12 @@
 import * as util from 'util'
 import { CommitID } from '../commit-id'
-import CID from 'cids'
+import { CID } from 'multiformats/cid'
 import * as multibase from 'multibase'
 
 const BASE_CID_STRING = 'bagcqcerakszw2vsovxznyp5gfnpdj4cqm2xiv76yd24wkjewhhykovorwo6a'
-const BASE_CID = new CID(BASE_CID_STRING)
+const BASE_CID = CID.parse(BASE_CID_STRING)
 const COMMIT_CID_STRING = 'bagjqcgzaday6dzalvmy5ady2m5a5legq5zrbsnlxfc2bfxej532ds7htpova'
-const COMMIT_CID = new CID(COMMIT_CID_STRING)
+const COMMIT_CID = CID.parse(COMMIT_CID_STRING)
 
 const STREAM_ID_STRING = 'kjzl6cwe1jw147dvq16zluojmraqvwdmbh61dx9e0c59i344lcrsgqfohexp60s'
 const STREAM_ID_BYTES = multibase.decode(STREAM_ID_STRING)

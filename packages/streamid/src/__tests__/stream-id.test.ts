@@ -1,5 +1,5 @@
 import { StreamID } from '../stream-id'
-import CID from 'cids'
+import { CID } from 'multiformats/cid'
 import * as util from 'util'
 import * as multibase from 'multibase'
 
@@ -22,7 +22,7 @@ const STREAM_ID_WITH_0_COMMIT_LEGACY =
 describe('constructor', () => {
   test('create by parts (type:int, cid:cid)', () => {
     const type = 0
-    const cid = new CID(CID_STRING)
+    const cid = CID.parse(CID_STRING)
     const streamid = new StreamID(type, cid)
 
     expect(streamid.type).toEqual(type)
@@ -43,7 +43,7 @@ describe('.fromBytes', () => {
   test('fail to create from garbage bytes', () => {
     expect(() =>
       StreamID.fromBytes(
-        new CID('bagcqcerakszw2vsovxznyp5gfnpdj4cqm2xiv76yd24wkjewhhykovorwo6a').bytes
+        CID.parse('bagcqcerakszw2vsovxznyp5gfnpdj4cqm2xiv76yd24wkjewhhykovorwo6a').bytes
       )
     ).toThrow()
   })
@@ -170,9 +170,9 @@ test('to primitive', () => {
 })
 
 describe('#atCommit', () => {
-  const BASE_CID = new CID(CID_STRING)
+  const BASE_CID = CID.parse(CID_STRING)
   const COMMIT_CID_STRING = 'bagjqcgzaday6dzalvmy5ady2m5a5legq5zrbsnlxfc2bfxej532ds7htpova'
-  const COMMIT_CID = new CID(COMMIT_CID_STRING)
+  const COMMIT_CID = CID.parse(COMMIT_CID_STRING)
 
   const streamId = new StreamID('tile', BASE_CID)
 

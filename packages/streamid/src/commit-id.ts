@@ -1,4 +1,4 @@
-import CID from 'cids'
+import { CID } from 'multiformats/cid'
 import multibase from 'multibase'
 import { StreamType } from './stream-type'
 import varint from 'varint'
@@ -42,7 +42,7 @@ function fromBytes(bytes: Uint8Array): CommitID {
  */
 function parseCID(input: any): CID | undefined {
   try {
-    return new CID(input)
+    return typeof input === 'string' ? CID.parse(input) : CID.asCID(input)
   } catch {
     return undefined
   }
@@ -137,7 +137,7 @@ export class CommitID implements StreamRef {
     if (!type && type !== 0) throw new Error('constructor: type required')
     if (!cid) throw new Error('constructor: cid required')
     this.#type = typeof type === 'string' ? StreamType.codeByName(type) : type
-    this.#cid = typeof cid === 'string' ? new CID(cid) : cid
+    this.#cid = typeof cid === 'string' ? CID.parse(cid) : cid
     this.#commit = parseCommit(this.#cid, commit)
   }
 
