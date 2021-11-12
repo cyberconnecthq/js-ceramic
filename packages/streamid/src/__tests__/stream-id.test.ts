@@ -1,4 +1,4 @@
-import { StreamID } from '../stream-id'
+import { StreamID } from '../stream-id.js'
 import CID from 'cids'
 import * as util from 'util'
 import * as multibase from 'multibase'

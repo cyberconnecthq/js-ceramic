@@ -1,8 +1,8 @@
 import CID from 'cids'
 import multibase from 'multibase'
 import varint from 'varint'
-import uint8ArrayConcat from 'uint8arrays/concat'
-import uint8ArrayToString from 'uint8arrays/to-string'
+import { concat } from 'uint8arrays/concat'
+import { toString } from 'uint8arrays/to-string'
 import { Memoize } from 'typescript-memoize'
 import { DEFAULT_BASE, STREAMID_CODEC } from './constants.js'
 import { readCid, readVarint } from './reading-bytes.js'
@@ -188,7 +188,7 @@ export class CommitID implements StreamRef {
     const type = varint.encode(this.type)
 
     const commitBytes = this.#commit?.bytes || new Uint8Array([0])
-    return uint8ArrayConcat([codec, type, this.cid.bytes, commitBytes])
+    return concat([codec, type, this.cid.bytes, commitBytes])
   }
 
   /**
@@ -212,7 +212,7 @@ export class CommitID implements StreamRef {
    */
   @Memoize()
   toString(): string {
-    return uint8ArrayToString(multibase.encode(DEFAULT_BASE, this.bytes))
+    return toString(multibase.encode(DEFAULT_BASE, this.bytes))
   }
 
   /**

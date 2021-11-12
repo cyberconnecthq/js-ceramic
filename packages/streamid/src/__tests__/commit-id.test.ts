@@ -1,5 +1,5 @@
 import * as util from 'util'
-import { CommitID } from '../commit-id'
+import { CommitID } from '../commit-id.js'
 import CID from 'cids'
 import * as multibase from 'multibase'
 
