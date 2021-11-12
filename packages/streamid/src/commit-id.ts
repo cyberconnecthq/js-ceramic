@@ -1,14 +1,14 @@
 import CID from 'cids'
 import multibase from 'multibase'
-import { StreamType } from './stream-type'
 import varint from 'varint'
 import uint8ArrayConcat from 'uint8arrays/concat'
 import uint8ArrayToString from 'uint8arrays/to-string'
 import { Memoize } from 'typescript-memoize'
-import { DEFAULT_BASE, STREAMID_CODEC } from './constants'
-import { readCid, readVarint } from './reading-bytes'
-import { StreamID } from './stream-id'
-import { StreamRef } from './stream-ref'
+import { DEFAULT_BASE, STREAMID_CODEC } from './constants.js'
+import { readCid, readVarint } from './reading-bytes.js'
+import { StreamType } from './stream-type.js'
+import { StreamID } from './stream-id.js'
+import { StreamRef } from './stream-ref.js'
 
 /**
  * Parse CommitID from bytes representation.
