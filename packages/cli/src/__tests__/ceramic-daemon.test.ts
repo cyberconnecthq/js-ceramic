@@ -7,7 +7,7 @@ import { TileDocumentHandler } from '@ceramicnetwork/stream-tile-handler'
 import { TileDocument } from '@ceramicnetwork/stream-tile'
 import { filter, take } from 'rxjs/operators'
 
-import StreamID from '@ceramicnetwork/streamid'
+import { StreamID } from '@ceramicnetwork/streamid'
 import getPort from 'get-port'
 import { createIPFS } from './create-ipfs'
 import { makeDID } from './make-did'

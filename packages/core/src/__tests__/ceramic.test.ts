@@ -10,7 +10,7 @@ import ThreeIdResolver from '@ceramicnetwork/3id-did-resolver'
 import KeyDidResolver from 'key-did-resolver'
 import { Resolver } from 'did-resolver'
 import { DID } from 'dids'
-import StreamID from '@ceramicnetwork/streamid'
+import { StreamID } from '@ceramicnetwork/streamid'
 
 jest.mock('../store/level-state-store')
 

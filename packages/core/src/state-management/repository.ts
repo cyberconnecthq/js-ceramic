@@ -1,4 +1,4 @@
-import StreamID, { CommitID } from '@ceramicnetwork/streamid'
+import { CommitID, StreamID } from '@ceramicnetwork/streamid'
 import {
   AnchorService,
   AnchorStatus,

@@ -1,5 +1,5 @@
 import { Dispatcher } from './dispatcher'
-import StreamID, { CommitID, StreamRef } from '@ceramicnetwork/streamid'
+import { CommitID, StreamID, StreamRef } from '@ceramicnetwork/streamid'
 import { IpfsTopology } from '@ceramicnetwork/ipfs-topology'
 import {
   CreateOpts,

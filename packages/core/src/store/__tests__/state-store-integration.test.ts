@@ -9,7 +9,7 @@ import {
 import { TileDocument } from '@ceramicnetwork/stream-tile'
 import { PinStore } from '../pin-store'
 import { PinStoreFactory } from '../pin-store-factory'
-import StreamID from '@ceramicnetwork/streamid'
+import { StreamID } from '@ceramicnetwork/streamid'
 import CID from 'cids'
 import { createIPFS } from '../../__tests__/ipfs-util'
 import { createCeramic } from '../../__tests__/create-ceramic'

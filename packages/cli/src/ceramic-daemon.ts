@@ -11,7 +11,7 @@ import {
   StreamUtils,
   SyncOptions,
 } from '@ceramicnetwork/common'
-import StreamID, { StreamType } from '@ceramicnetwork/streamid'
+import { StreamType, StreamID } from '@ceramicnetwork/streamid'
 import ThreeIdResolver from '@ceramicnetwork/3id-did-resolver'
 import KeyDidResolver from 'key-did-resolver'
 import PkhDidResolver from 'pkh-did-resolver'

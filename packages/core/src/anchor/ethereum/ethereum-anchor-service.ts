@@ -9,7 +9,7 @@ import {
   DiagnosticsLogger,
   fetchJson,
 } from '@ceramicnetwork/common'
-import StreamID from '@ceramicnetwork/streamid'
+import { StreamID } from '@ceramicnetwork/streamid'
 import { Observable, interval, from, concat, of } from 'rxjs'
 import { concatMap, catchError, map } from 'rxjs/operators'
 

@@ -1,4 +1,4 @@
-import StreamID from '@ceramicnetwork/streamid'
+import { StreamID } from '@ceramicnetwork/streamid'
 import { Contract, ContractFactory } from '@ethersproject/contracts'
 import { AccountID } from 'caip'
 import * as sigUtils from 'eth-sig-util'

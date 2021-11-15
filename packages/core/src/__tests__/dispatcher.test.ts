@@ -1,6 +1,6 @@
 import { Dispatcher } from '../dispatcher'
 import CID from 'cids'
-import StreamID from '@ceramicnetwork/streamid'
+import { StreamID } from '@ceramicnetwork/streamid'
 import { CommitType, StreamState, LoggerProvider } from '@ceramicnetwork/common'
 import { serialize, MsgType } from '../pubsub/pubsub-message'
 import { Repository, RepositoryDependencies } from '../state-management/repository'

@@ -10,7 +10,7 @@ import {
   TestUtils,
 } from '@ceramicnetwork/common'
 import CID from 'cids'
-import StreamID from '@ceramicnetwork/streamid'
+import { StreamID } from '@ceramicnetwork/streamid'
 
 let mockStorage: Map<string, any>
 const mockPut = jest.fn((id: string, state: any) => mockStorage.set(id, state))

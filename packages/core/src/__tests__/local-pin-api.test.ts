@@ -1,5 +1,5 @@
 import { LocalPinApi } from '../local-pin-api'
-import StreamID from '@ceramicnetwork/streamid'
+import { StreamID } from '@ceramicnetwork/streamid'
 import * as random from '@stablelib/random'
 import { CommitType, StreamState, LoggerProvider, SyncOptions } from '@ceramicnetwork/common'
 import { Repository } from '../state-management/repository'

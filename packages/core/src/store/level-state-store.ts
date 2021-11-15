@@ -1,7 +1,7 @@
 import Level from 'level-ts'
 import { StreamState, StreamStateHolder, StreamUtils } from '@ceramicnetwork/common'
 import { StateStore } from './state-store'
-import StreamID from '@ceramicnetwork/streamid'
+import type { StreamID } from '@ceramicnetwork/streamid'
 import * as fs from 'fs'
 import path from 'path'
 

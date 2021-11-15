@@ -13,7 +13,7 @@ import {
 
 import type { Dispatcher } from '../../dispatcher'
 import Ceramic from '../../ceramic'
-import StreamID from '@ceramicnetwork/streamid'
+import { StreamID } from '@ceramicnetwork/streamid'
 import { DiagnosticsLogger } from '@ceramicnetwork/common'
 import type { DagJWS } from 'dids'
 import Utils from '../../utils'

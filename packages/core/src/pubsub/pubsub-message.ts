@@ -1,4 +1,4 @@
-import StreamID from '@ceramicnetwork/streamid'
+import { StreamID } from '@ceramicnetwork/streamid'
 import CID from 'cids'
 import { UnreachableCaseError } from '@ceramicnetwork/common'
 import dagCBOR from 'ipld-dag-cbor'
