@@ -4,10 +4,10 @@ import varint from 'varint'
 import dagCBOR from 'ipld-dag-cbor'
 import { concat as uint8ArrayConcat } from 'uint8arrays/concat'
 import { toString as uint8ArrayToString } from 'uint8arrays/to-string'
-import { DEFAULT_BASE, STREAMID_CODEC } from './constants'
-import { readCid, readVarint } from './reading-bytes'
+import { DEFAULT_BASE, STREAMID_CODEC } from './constants.js'
+import { readCid, readVarint } from './reading-bytes.js'
 import { Memoize } from 'typescript-memoize'
-import { CommitID } from './commit-id.js'
+import type { CommitID } from './commit-id.js'
 import { StreamRef } from './stream-ref.js'
 import { StreamType } from './stream-type.js'
 
@@ -158,7 +158,8 @@ export class StreamID implements StreamRef {
    * Construct new CommitID for the same stream, but a new `commit` CID.
    */
   atCommit(commit: CID | string | number): CommitID {
-    return new CommitID(this.#type, this.#cid, commit)
+    throw new Error(`foo`)
+    // return new CommitID(this.#type, this.#cid, commit)
   }
 
   /**
