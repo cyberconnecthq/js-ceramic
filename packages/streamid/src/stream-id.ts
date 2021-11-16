@@ -7,7 +7,7 @@ import { toString as uint8ArrayToString } from 'uint8arrays/to-string'
 import { DEFAULT_BASE, STREAMID_CODEC } from './constants.js'
 import { readCid, readVarint } from './reading-bytes.js'
 import { Memoize } from 'typescript-memoize'
-import type { CommitID } from './commit-id.js'
+import { CommitID } from './commit-id.js'
 import { StreamRef } from './stream-ref.js'
 import { StreamType } from './stream-type.js'
 
